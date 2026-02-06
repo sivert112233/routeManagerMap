@@ -11,49 +11,25 @@ p {
 }
 
 #map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 60vh;
-}
-
-
-.displayBoxRender {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    height: 90px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.13);
-
-    background-color: rgb(13, 152, 216);
-}
-.displayBoxLocNumber{
-    font-size: 22px;
-    font-weight: bolder;
-}
-.displayBoxLocResult {
-    text-align: center;
-    margin: 10px;
-}
-
-.displayBoxLocCord{
-    font-style: italic;
-    font-weight: bold;
+    z-index: 10;
 }
 
 .inputBox {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top: 60vh;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 15vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
-    gap: 10px;
+    /*border-radius:  0px 0px 50px 50px;*/
     background-color: rgb(90, 90, 90);
 }
 
@@ -72,4 +48,34 @@ p {
 
 .inputBoxButton:hover {
     background-color: rgba(127, 255, 212, 0.329);
+}
+
+.displayBox {
+    position: absolute;
+    top: 75%;
+}
+
+.displayBoxRender {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    gap: 5px;
+    margin: 5px 0px;
+
+
+
+
+    /*box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.13);*/
+    background-color: rgb(13, 152, 216);
+}
+
+.displayBoxLocNumber {
+    font-weight: bolder;    
+}
+
+.displayBoxLocResult {
+    
+    
 }

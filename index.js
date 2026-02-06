@@ -13,7 +13,7 @@ async function searchLocationApi(x) {
     displayBox.innerHTML = '';
     const url = `https://nominatim.openstreetmap.org/search?q=${x}&format=json&limit=25`;
     const response = await fetch(url).then(respons => respons.json());
-    let locNum = 0; 
+    let locNum = 0;
     if (response.length > 1) {
         response.forEach(x => {
             locNum++
