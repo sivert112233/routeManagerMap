@@ -23,7 +23,6 @@ async function searchLocationApi(x) {
                 <div class="displayBoxRender">
                     <div class="displayBoxLocNumber">Location: ${locNum}</div>
                     <div class="displayBoxLocResult">${x.display_name}</div>
-                    <div class="displayBoxLocCord">Koordinater: ${x.lat},${x.lon}</div>
                 </div>
             `;
         });
