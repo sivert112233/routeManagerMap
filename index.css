@@ -52,7 +52,7 @@ p {
 
 .displayBox {
     position: absolute;
-    top: 75%;
+    top: 75vh;
 }
 
 .displayBoxRender {
