@@ -26,6 +26,9 @@ async function searchLocationApi(x) {
                     <div class="displayBoxLocCord">Koordinater: ${x.lat},${x.lon}</div>
                 </div>
             `;
+            displayBox.addEventListener('click', () => {
+                L.marker([x.lat, x.lon]).addTo(map);
+            }); 
         });
     } else {
         L.marker([response[0].lat, response[0].lon]).addTo(map);
