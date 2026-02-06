@@ -15,16 +15,16 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    height: 60vh;
+    height: 60%;
     z-index: 10;
 }
 
 .inputBox {
     position: absolute;
-    top: 60vh;
+    top: 60%;
     left: 0;
     right: 0;
-    height: 15vh;
+    height: 15%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -52,7 +52,7 @@ p {
 
 .displayBox {
     position: absolute;
-    top: 75vh;
+    top: 75%;
 }
 
 .displayBoxRender {
