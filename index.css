@@ -72,14 +72,14 @@ p {
 
 
     /*box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.13);*/
-    background-color: rgb(141, 141, 141);
+    background-color: rgb(43, 171, 217);
 }
 
 .displayBoxLocNumber {
     font-weight: bolder;    
 }
-
-.displayBoxLocResult {
-    
-    
+.displayBoxLocResultButton{
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
 }
