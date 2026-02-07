@@ -3,7 +3,15 @@ html {
 }
 body{
     box-sizing: border-box;
+    height: 100%;
+    
+    
 }
+
+input{
+    outline: none;
+}
+
 
 html,
 body,
@@ -18,68 +26,71 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    height: 60vh;
+    height: 50vh;
     z-index: 10;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.182);
 }
 
 .inputBox {
     position: absolute;
-    top: 60vh;
+    top: 50vh;
     left: 0;
     right: 0;
-    height: 15vh;
+    height: 6vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     z-index: 5;
-    /*border-radius:  0px 0px 50px 50px;*/
-    background-color: rgb(90, 90, 90);
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
 
 .inputBoxInput {
     text-align: center;
-    height: 40px;
-    width: 95%;
+    width: 90%;
+    height: 30px;
+    border: 1px solid black;
 }
 
 .inputBoxButton {
-    padding: 15px 100px;
+    border: 1px solid black;
+    height: 35px;
+    width: 35px;
     border-radius: 25px;
-    border: none;
-    background-color: aquamarine;
-}
+    background-color: #ffffff;
+    font-size: large;
 
-.inputBoxButton:hover {
-    background-color: rgba(127, 255, 212, 0.329);
+}
+.inputBoxButton:active {
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
 .displayBox {
     position: relative;
-    top: 75vh;
+    top: 56vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
 }
 
 .displayBoxRender {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    gap: 5px;
-    margin: 5px 0px;
-
-
-
-
-    /*box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.13);*/
-    background-color: rgb(43, 171, 217);
 }
 
+/*ikke i bruk enda*/
 .displayBoxLocNumber {
     font-weight: bolder;    
 }
 .displayBoxLocResultButton{
     padding: 10px;
-    border: none;
-    border-radius: 25px;
+    border: 1px solid black;
+    background-color: #ffffff;
+}
+.displayBoxLocResultButton:hover{
+    color: #ffffff;
+    background-color: black;
 }
