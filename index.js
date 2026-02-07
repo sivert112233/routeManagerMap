@@ -12,17 +12,39 @@ new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 //Search button event.
 inputBoxButton.addEventListener('click', () => {
-    searchLocationApi(inputBoxInput.value);
+    searchLocationAndAddMarker(inputBoxInput.value);
 });
 
+
+//Legger til en markører på kartet.
+routeData.osterdal.forEach(x => {
+    L.marker(x.latLng).addTo(map);
+});
+
+
+
+
+
+
+
+
+
 //Search functiion.
-async function searchLocationApi(x) {
+async function searchLocationAndAddMarker(x) {
+
+    if (!x) {
+        return alert('Ingen lokasjon');
+    }
     const displayBox = document.querySelector('.displayBox');
-    //Message to user...............?
     displayBox.innerHTML = ``;
+    
     //Getting search location(s) from the api.
     const url = `https://nominatim.openstreetmap.org/search?q=${x}&format=json&limit=25`;
     const response = await fetch(url).then(respons => respons.json());
+
+    if (response.length === 0) {
+        return alert(`Finner ingen adresse med navnet (${x}). Sjekk adressen.`);
+    }
     if (response.length > 1) {
         response.forEach(x => {
             //Displaying search result on the page.
@@ -48,10 +70,3 @@ async function searchLocationApi(x) {
     }
 }
 
-
-
-
-//Legger til en markører på kartet.
-routeData.osterdal.forEach(x => {
-    L.marker(x.latLng).addTo(map);
-});
