@@ -44,11 +44,12 @@ p {
     z-index: 5;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
+    padding: 0px 5px;
 }
 
 .inputBoxInput {
     text-align: center;
-    width: 80%;
+    width: 100%;
     height: 30px;
     border: 1px solid black;
 }
