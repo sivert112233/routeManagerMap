@@ -1,7 +1,7 @@
 import { routeData } from "./data.js";
 
 // Declaration and init map location.
-const map = L.map('map').setView([60.908479414005015, 10.810253805299897], 7);
+const map = L.map('map').setView([60.908479414005015, 10.810253805299897], 10);
 const inputBoxButton = document.querySelector('.inputBoxButton');
 const inputBoxInput = document.querySelector('.inputBoxInput');
 
@@ -10,34 +10,35 @@ new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+L.marker([60.908479414005015, 10.810253805299897]).addTo(map).on('click', event => removeLocation(event));
+
 //Search button event.
 inputBoxButton.addEventListener('click', () => {
     searchLocationAndAddMarker(inputBoxInput.value);
 });
 
 
-//Legger til en markører på kartet.
-routeData.osterdal.forEach(x => {
-    L.marker(x.latLng).addTo(map);
-});
 
 
 
 
 
+//-----------------------------------------------------------------------------------------------------//
 
-
+function removeLocation(event) {
+    confirm('ØNSKER DU Å FJÆRNE LOKASJONEN?') && event.target.remove();
+}
 
 
 //Search functiion.
 async function searchLocationAndAddMarker(x) {
 
     if (!x) {
-        return alert('Ingen lokasjon');
+        return alert('Ingen lokasjon valget\nSkrives in i søk boksen.');
     }
     const displayBox = document.querySelector('.displayBox');
     displayBox.innerHTML = ``;
-    
+
     //Getting search location(s) from the api.
     const url = `https://nominatim.openstreetmap.org/search?q=${x}&format=json&limit=25`;
     const response = await fetch(url).then(respons => respons.json());
@@ -69,4 +70,29 @@ async function searchLocationAndAddMarker(x) {
         L.marker([response[0].lat, response[0].lon]).addTo(map);
     }
 }
+//-----------------------------------------------------------------------------------------------------//
+/*
 
+//Legger til en markører på kartet.
+routeData.osterdal.forEach(x => {
+    L.marker(x.latLng).addTo(map);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
