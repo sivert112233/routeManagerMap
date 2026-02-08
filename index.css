@@ -70,7 +70,7 @@ p {
 
 .displayBox {
     position: relative;
-    top: 56vh;
+    top: 57.5vh;
     display: flex;
     flex-direction: column;
     padding: 10px;
