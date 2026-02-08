@@ -56,7 +56,6 @@ p {
 
 .inputBoxButton {
     border: 1px solid black;
-
     height: 30px;
     border-radius: 25px;
     background-color: #ffffff;
@@ -70,12 +69,57 @@ p {
 
 .displayBox {
     position: relative;
-    top: 57.5vh;
+    top: 58vh;
     display: flex;
     flex-direction: column;
     padding: 10px;
     gap: 5px;
+
+  
+
 }
+
+
+
+.displayBoxStarMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+    border: 1px solid black;
+
+}
+
+
+
+.displayBoxStarMenu button{
+    width: 95%;
+    border: 1px solid black;
+    height: 30px;
+    background-color: #ffffff;
+}
+.displayBoxStarMenu button:active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .displayBoxRender {
     display: flex;

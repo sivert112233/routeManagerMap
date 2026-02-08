@@ -12,11 +12,11 @@ new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 L.marker([60.908479414005015, 10.810253805299897]).addTo(map).on('click', event => removeLocation(event));
 
+
 //Search button event.
 inputBoxButton.addEventListener('click', () => {
     searchLocationAndAddMarker(inputBoxInput.value);
 });
-
 
 
 
@@ -36,12 +36,16 @@ async function searchLocationAndAddMarker(x) {
     if (!x) {
         return alert('Ingen lokasjon valget\nSkrives in i søk boksen.');
     }
+
     const displayBox = document.querySelector('.displayBox');
     displayBox.innerHTML = ``;
 
     //Getting search location(s) from the api.
-    const url = `https://nominatim.openstreetmap.org/search?q=${x}&format=json&limit=25`;
-    const response = await fetch(url).then(respons => respons.json());
+    console.log(x);
+    const url = `https://nominatim.openstreetmap.org/search?q=${x}&format=json&limit=50`;
+    const response = await fetch(url).then( x => x.json());
+
+    console.log(response);
 
     if (response.length === 0) {
         return alert(`Finner ingen adresse med navnet (${x}). Sjekk adressen.`);
@@ -57,17 +61,19 @@ async function searchLocationAndAddMarker(x) {
                 </div>
             `;
         });
+
+        //Add onClick event to display locations.
         document.querySelectorAll('.displayBoxLocResultButton').forEach((x) => {
             x.addEventListener('click', () => {
                 const lat = x.value.slice(0, x.value.search(/ /));
                 const lon = x.value.slice(x.value.search(/ /) + 1, x.value.length);
-                L.marker([lat, lon]).addTo(map);
+                L.marker([lat, lon]).addTo(map).on('click', event => removeLocation(event));
                 displayBox.innerHTML = '';
             });
         });
     } else {
         //Adding marker to the map.
-        L.marker([response[0].lat, response[0].lon]).addTo(map);
+        L.marker([response[0].lat, response[0].lon]).addTo(map).on('click', event => removeLocation(event));
     }
 }
 //-----------------------------------------------------------------------------------------------------//
